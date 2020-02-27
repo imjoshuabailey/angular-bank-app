@@ -6,6 +6,9 @@ import { TellerComponent } from './teller/teller.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'atm', pathMatch: 'full' },
+  {path: 'atm', component: AtmComponent},
+  {path: 'teller', component: TellerComponent}
+  
 ];
 
 export const router: ModuleWithProviders = RouterModule.forRoot(routes);
