@@ -8,7 +8,12 @@ import { BankService } from '../bank.service';
 })
 export class AtmComponent {
 
-  constructor() { }
-  value: 0;
+  constructor( public bankService: BankService) { }
+  
+  value: number
 
+  withdraw() {
+    console.log(this.bankService.account.balance - this.value)
+    return this.bankService.account.balance = this.bankService.account.balance - this.value
+  };
 }

@@ -6,10 +6,10 @@
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
-    <input type="text">
+    <input [(ngModel)]="value" type="text">
     <ul class="options-list">
       <li class="options-item">
-        <button>Make a Widthdrawl</button>
+        <button (click)="withdraw()">Make a Withdrawl</button>
       </li>
       <li class="options-item">
         <button>Deposit Money</button>

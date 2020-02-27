@@ -9,6 +9,7 @@ import { BankService } from './bank.service'
 import { router } from './app.router';
 import { NavComponent } from './nav/nav.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContactComponent } from './contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    router
+    router,
+    FormsModule
   ],
   providers: [BankService],
   bootstrap: [AppComponent]
