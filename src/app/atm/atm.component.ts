@@ -9,5 +9,6 @@ import { BankService } from '../bank.service';
 export class AtmComponent {
 
   constructor() { }
+  value: 0;
 
 }
