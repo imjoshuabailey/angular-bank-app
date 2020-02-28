@@ -3,22 +3,28 @@
   <section class="display">
     > Welcome, Henry!
     <!-- Display Feedback information here -->
+    <ul class="transactions">
+      <li *ngFor="let transactions of bankService.account.transactions"> Date: {{transactions.date}} 
+        Type: {{transactions.type}}
+        Amount: {{transactions.amount}}
+      </li>
+    </ul>
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
-    <input [(ngModel)]="value" type="text">
+    <input [(ngModel)]="value" type="number">
     <ul class="options-list">
       <li class="options-item">
         <button (click)="withdraw()">Make a Withdrawl</button>
       </li>
       <li class="options-item">
-        <button>Deposit Money</button>
+        <button (click)="deposit()">Deposit Money</button>
       </li>
       <li class="options-item">
         <button>Balance Inquiry</button>
       </li>
       <li class="options-item">
-        <button>Transactions History</button>
+        <button (click)="transactions()">Transactions History</button>
       </li>
     </ul>
   </aside>

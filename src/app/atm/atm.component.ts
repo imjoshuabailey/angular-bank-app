@@ -11,9 +11,19 @@ export class AtmComponent {
   constructor( public bankService: BankService) { }
   
   value: number
-
+  letters = /^[a-zA-Z\s]+$/;
+  transaction: any[] = [];
+  
   withdraw() {
-    console.log(this.bankService.account.balance - this.value)
-    return this.bankService.account.balance = this.bankService.account.balance - this.value
+    this.bankService.withdraw(this.value);
+  };
+
+  deposit() {
+    this.bankService.deposit(this.value);
+  };
+
+  transactions() {
+    this.transaction = this.bankService.account.transactions
+    console.log(this.transaction[1])
   };
 }

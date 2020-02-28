@@ -41,4 +41,26 @@ export class BankService {
       }
     ]
   };
+  withdraw(value) {
+    if (value > 0) {
+      console.log('value =', value)
+      this.account.balance = Math.round((this.account.balance - value) * 100) / 100
+      console.log(this.account.balance)
+      return this.account.balance
+    } else {
+      return alert('Please enter a positive number');
+    }
+  };
+
+  deposit(value) {
+    if (value > 0) {
+      console.log('value =', value)
+      this.account.balance = Math.round((this.account.balance + value) * 100) / 100
+      console.log(this.account.balance)
+      return this.account.balance
+    } else {
+      return alert('Please enter a positive number')
+    }
+  };
+  
 }
