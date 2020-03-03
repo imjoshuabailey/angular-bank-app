@@ -3,15 +3,22 @@
   <section class="display">
     > Welcome, Henry!
     <!-- Display Feedback information here -->
-    <ul class="transactions">
-      <li *ngFor="let transactions of bankService.account.transactions"> Date: {{transactions.date}} 
-        Type: {{transactions.type}}
-        Amount: {{transactions.amount}}
+    <h3 *ngIf="balanceClicked == true" class="balance">Current Balance: ${{currentBalance}}</h3>
+    
+    <ul *ngIf="transactionsClicked == true" class="transactions">
+      <li class="listItem" *ngFor="let transactions of bankService.account.transactions"> TRANSACTION DATE: {{transactions.date}} 
+        <br>
+        TYPE: {{transactions.type}}
+        <br>
+        TRANSACTION AMOUNT: ${{transactions.amount}} 
+        <br>
+        FINAL BALANCE: ${{transactions.finalValue}}
       </li>
     </ul>
   </section>
   <aside class="options">
     <!-- Add functionality to the buttons below -->
+    
     <input [(ngModel)]="value" type="number">
     <ul class="options-list">
       <li class="options-item">
@@ -21,7 +28,7 @@
         <button (click)="deposit()">Deposit Money</button>
       </li>
       <li class="options-item">
-        <button>Balance Inquiry</button>
+        <button (click)="balanceCheck()">Balance Inquiry</button>
       </li>
       <li class="options-item">
         <button (click)="transactions()">Transactions History</button>
