@@ -6,7 +6,7 @@
     <h3 *ngIf="balanceClicked == true" class="balance">Current Balance: ${{currentBalance}}</h3>
     
     <ul *ngIf="transactionsClicked == true" class="transactions">
-      <li class="listItem" *ngFor="let transactions of bankService.account.transactions"> TRANSACTION DATE: {{transactions.date}} 
+      <li class="listItem" *ngFor="let transactions of _bankService.account.transactions"> TRANSACTION DATE: {{transactions.date}} 
         <br>
         TYPE: {{transactions.type}}
         <br>

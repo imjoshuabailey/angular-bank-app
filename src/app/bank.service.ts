@@ -83,7 +83,7 @@ export class BankService {
     transactionObj.type = type
     transactionObj.amount = amount
     transactionObj.finalValue = finalValue
-    this.account.transactions.shift()
+    // this.account.transactions.shift()
     this.account.transactions.push(transactionObj)
   };
 }

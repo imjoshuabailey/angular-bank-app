@@ -8,7 +8,7 @@ import { BankService } from '../bank.service';
 })
 export class AtmComponent {
 
-  constructor( public bankService: BankService) { }
+  constructor( public _bankService: BankService) { }
   
   value: number
   letters = /^[a-zA-Z\s]+$/;
@@ -19,30 +19,33 @@ export class AtmComponent {
   
 
   withdraw() {
-    this.bankService.withdraw(this.value);
+    this.value = Math.round((this.value) * 100) / 100
+    this._bankService.withdraw(this.value);
     if (this.transactionsClicked == true || this.balanceClicked == true) {
-    // this.transactionsClicked = false;
-    this.currentBalance = this.bankService.balance();
+    this.transactionsClicked = false;
+    this.balanceClicked = false;
     }
   };
 
   deposit() {
-    this.bankService.deposit(this.value);
+    this.value = Math.round((this.value) * 100) / 100
+    this._bankService.deposit(this.value);
     if (this.transactionsClicked == true || this.balanceClicked == true) {
-    // this.transactionsClicked = false;
-    this.currentBalance = this.bankService.balance();
+    this.transactionsClicked = false;
+    this.balanceClicked = false;
     }
   };
 
   transactions() {
-    this.transaction = this.bankService.account.transactions
+    this.transaction = this._bankService.account.transactions
     this.transactionsClicked = true;
-    
+    this.balanceClicked = false;
   };
 
   balanceCheck() {
-    this.currentBalance = this.bankService.balance();
+    this.currentBalance = this._bankService.balance();
     this.balanceClicked = true;
+    this.transactionsClicked = false;
   };
 
 }
