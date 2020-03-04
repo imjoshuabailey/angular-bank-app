@@ -9,7 +9,7 @@
 
 .display {
   flex-basis: 50vw;
-  background-color: darkslategrey;
+  background-color: rgb(31, 52, 100);
   color: white;
 }
 

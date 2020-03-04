@@ -12,7 +12,7 @@ export class AtmComponent {
   
   value: number
   letters = /^[a-zA-Z\s]+$/;
-  transaction: any[] = [];
+  // transaction: any[] = [];
   transactionsClicked = false;
   balanceClicked = false;
   currentBalance: number
@@ -37,7 +37,7 @@ export class AtmComponent {
   };
 
   transactions() {
-    this.transaction = this._bankService.account.transactions
+    // this.transaction = this._bankService.account.transactions
     this.transactionsClicked = true;
     this.balanceClicked = false;
   };

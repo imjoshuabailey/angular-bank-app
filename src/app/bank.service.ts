@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Transaction } from './transaction'
+
 
 @Injectable({
   providedIn: 'root'
 })
+export class Transaction {
+  date: string;
+  type: string;
+  amount: number;
+  finalValue: number;
+};
+
 export class BankService {
 
   constructor() { }
@@ -11,47 +18,47 @@ export class BankService {
   transaction: Array<Transaction> = [];
 
   account: any = {
-    fname: 'first name',
-    lname: 'last name',
-    age: 0,
+    fname: 'Brian',
+    lname: 'Davies',
+    age: 29,
     address: {
-      street: '1234 street st',
-      city: 'city',
-      state: 'state',
-      zip: 12345,
-      country: 'canada'
+      street: '853 Elm Ave.',
+      city: 'Chula Vista',
+      state: 'CA',
+      zip: 91911,
+      country: 'United States'
     },
     balance: 0.01,
-    currency: 'usd',
+    currency: 'USD',
     transactions: [
       {
         date: '01-01-01',
-        type: 'withdrawal',
+        type: 'Withdrawal',
         amount: 200.00,
         finalValue: 0,
       },
       {
         date: '02-02-02',
-        type: 'deposit',
+        type: 'Deposit',
         amount: 100.00,
         finalValue: 0,
       },
       {
         date: '03-03-03',
-        type: 'withdrawal',
+        type: 'Withdrawal',
         amount: 2.00,
         finalValue: 0,
       }
     ]
   };
   withdraw(value) {
-    if (value > 0) {
-      this.account.balance = Math.round((this.account.balance - value) * 100) / 100
-      this.newTransaction(value, "Withdrawl", this.account.balance);
-      return this.account.balance
-    } else {
-      return alert('Please enter a positive number');
-    }
+      if (value > 0) {
+        this.account.balance = Math.round((this.account.balance - value) * 100) / 100
+        this.newTransaction(value, "Withdrawal", this.account.balance);
+        return this.account.balance
+      } else {
+        return alert('Please enter a positive number');
+      }
   };
 
   deposit(value) {
@@ -83,7 +90,6 @@ export class BankService {
     transactionObj.type = type
     transactionObj.amount = amount
     transactionObj.finalValue = finalValue
-    // this.account.transactions.shift()
     this.account.transactions.push(transactionObj)
   };
 }
