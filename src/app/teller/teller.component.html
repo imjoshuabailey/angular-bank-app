@@ -14,14 +14,10 @@
     <h3>Last 3 Transactions</h3>
     
       <div class="listItem" *ngFor="let transactions of (_bankService.account.transactions | slice:_bankService.account.transactions.length - 3)">
-        [{{transactions.date}}] - {{transactions.type}} (${{transactions.amount}})
-        <br>
+        <p>[{{transactions.date}}] - {{transactions.type}} (${{transactions.amount}})</p> 
         <!-- FINAL BALANCE: ${{transactions.finalValue}} -->
       </div>
 
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
-    <p>[01-01-2018] -  Withdrawal ($40 USD)</p>
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
   </section>
   <aside class="options">
     <section class="balance">

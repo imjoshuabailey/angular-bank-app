@@ -24,3 +24,10 @@
 .options-item {
 
 }
+button {
+  width: 200px;
+  height: 30px;
+}
+button:hover {
+  opacity: 0.6;
+}
