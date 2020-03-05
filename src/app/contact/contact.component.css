@@ -1,0 +1,22 @@
+.main {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.bankInfo {
+    flex-basis: 50vw;
+    background-color: rgb(31, 52, 100);
+    color: white;
+}
+.formBox {
+    flex-basis: 50vw;
+}
+li {
+  list-style-type: none;
+}
+.options-item {
+    width: 250px;
+}
+.submit {
+    width: 250px;
+    height: 30px;
+}
