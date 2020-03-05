@@ -37,7 +37,6 @@ export class AtmComponent {
   };
 
   transactions() {
-    // this.transaction = this._bankService.account.transactions
     this.transactionsClicked = true;
     this.balanceClicked = false;
   };

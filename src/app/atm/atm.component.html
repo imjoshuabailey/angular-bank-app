@@ -6,13 +6,9 @@
     <h3 *ngIf="balanceClicked == true" class="balance">Current Balance: ${{currentBalance}}</h3>
     
     <ul *ngIf="transactionsClicked == true" class="transactions">
-      <li class="listItem" *ngFor="let transactions of (_bankService.account.transactions | slice:_bankService.account.transactions.length - 3)"> TRANSACTION DATE: {{transactions.date}} 
-        <br>
-        TYPE: {{transactions.type}}
-        <br>
-        TRANSACTION AMOUNT: ${{transactions.amount}} 
-        <br>
-        FINAL BALANCE: ${{transactions.finalValue}}
+      <li class="listItem" *ngFor="let transactions of (_bankService.account.transactions | slice:_bankService.account.transactions.length - 3)"> 
+        <p>[{{transactions.date}}] - {{transactions.type}} (${{transactions.amount}})</p>
+        New Balance: ${{transactions.finalValue}}
       </li>
     </ul>
   </section>
